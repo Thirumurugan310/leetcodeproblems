@@ -6,6 +6,6 @@ class Solution {
             else num-=1;
             step++;
         }
-        return step;
+         return step;
     }
 }
