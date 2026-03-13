@@ -14,17 +14,20 @@
  * }
  */
 class Solution {
-    int tit = 0;
     int call(TreeNode root){
         if(root==null)return 0;
         int left = call(root.left);
         int right = call(root.right);
-        tit += Math.abs(left-right);
-        return root.val + left + right;
+        int value = root.val;
+        root.val= Math.abs(left-right);
+        return value + left + right;
     }
     public int findTilt(TreeNode root) {
         call(root);
-        return tit;
+        return back(root);
     }
-
+    int back(TreeNode root){
+        if(root==null)return 0;
+        return root.val + back(root.right) + back(root.left);
+    }
 }
