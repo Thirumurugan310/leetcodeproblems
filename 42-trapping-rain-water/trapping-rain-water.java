@@ -7,11 +7,11 @@ class Solution {
         int w = 0;
         while(l<r){
             if(h[l]<=h[r]){
-                if(lm <= h[l])lm = h[l];
+                if(lm < h[l])lm = h[l];
                 else w += lm - h[l];
                 l++;
             }else{
-                if(rm <= h[r])rm = h[r];
+                if(rm < h[r])rm = h[r];
                 else w += rm - h[r];
                 r--;
             }
